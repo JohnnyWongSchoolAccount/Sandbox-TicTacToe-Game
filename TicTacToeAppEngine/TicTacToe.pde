@@ -69,6 +69,9 @@ void drawTicTacToeONOFF() {
   if ( mouseX>=TTTX12 && mouseX<=TTTX12+TTTWidth && mouseY>=TTTY12 && mouseY<=TTTY12+TTTHeight )
   { fill(hoverOver); stroke(hoverOver); } else { fill(black); stroke(black);}
   TTTRightBottomCorner(" X ", " O ");//cell[2][2]
+  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight )
+  {fill(#00FF4A); stroke(#00FF4A);} else {fill(#FF0000); stroke(#FF0000);}
+  quitRect("Quit");
 }//end drawTicTacToeONOFF
 void mousePressedTicTacToeONOFF() {
   if (gameOn) turn();
@@ -77,6 +80,8 @@ void mousePressedTicTacToeONOFF() {
   if ( mouseX>=TTTModeX && mouseX<=TTTModeX+TTTModeWidth && mouseY>=TTTModeY && mouseY<=TTTModeY+TTTModeHeight )
   if (dropDownTicTacToeModeMenu) dropDownTicTacToeModeMenu = false; else dropDownTicTacToeModeMenu = true;
   if (dropDownTicTacToeModeMenu) TTTMousePressedMode();
+  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight )
+  { quitFunction(250); }
 }//end mousePressedTicTacToeONOFF
 void claimCell(int row, int colemn) {
   if (cell[row][colemn] == 0) {
@@ -294,6 +299,10 @@ void easyAlgorithm() {
     randomAlgorithm();
   }
 }//end easyAlgorithm
+void quitFunction(int quitDelay) {
+  delay(quitDelay);
+  exit();
+}//end quitfuction
 void impossibleAlgorithm() {
   if (turnXO == false) {
     for (int i = 0; i < 3; i++) {
