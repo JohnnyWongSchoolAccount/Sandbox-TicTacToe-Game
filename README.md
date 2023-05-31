@@ -1,4 +1,3 @@
-# Sandbox-TicTacToe-Game
 #INFO
 - This is the tic tac toe game program that has all the algorithms including easy, medium and impossible. The TicTacToeAppEngine also includes a scoreboard, and text that indicates the state of the game. The TicTacToeAppEngine has also already been implemented into the main AppEngine as well -> https://github.com/JohnnyWongSchoolAccount/Sandbox-Hello-World
 # Tic Tac Toe Algorithms
